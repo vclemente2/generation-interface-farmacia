@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export default function NavBar() {
   return (
-    <header className="bg-green-900 text-white flex justify-center px-16 py-8">
+    <header className="bg-green-900 text-white flex justify-between px-16 py-8">
       <div className="container flex justify-between text-lg">
         <h3>Farmacia Generation</h3>
         <nav className="flex justify-center items-center">

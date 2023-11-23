@@ -1,9 +1,9 @@
 import { AxiosError } from "axios";
-import api from "./api";
+import http from "./http";
 
 export async function listarCategorias() {
   try {
-    const response = await api.get("/categoria");
+    const response = await http.get("/categoria");
     return response.data;
   } catch (error) {
     if (error instanceof AxiosError) {
@@ -16,7 +16,7 @@ export async function listarCategorias() {
 
 export async function criarCategoria(categoria: any) {
   try {
-    const response = await api.post("/categorias", categoria);
+    const response = await http.post("/categorias", categoria);
     return response.data;
   } catch (error) {
     if (error instanceof AxiosError) {
@@ -29,7 +29,7 @@ export async function criarCategoria(categoria: any) {
 
 export async function excluirCategoria(id: number) {
   try {
-    const response = await api.delete(`/categorias/${id}`);
+    const response = await http.delete(`/categorias/${id}`);
     return response.data;
   } catch (error) {
     if (error instanceof AxiosError) {
@@ -42,7 +42,7 @@ export async function excluirCategoria(id: number) {
 
 export async function editarCategoria(categoria: any) {
   try {
-    const response = await api.put("/categorias", categoria);
+    const response = await http.put("/categorias", categoria);
     return response.data;
   } catch (error) {
     if (error instanceof AxiosError) {
@@ -55,7 +55,7 @@ export async function editarCategoria(categoria: any) {
 
 export async function buscarCategoriaPorNome(nome: string) {
   try {
-    const response = await api.get(`/categorias/nome/${nome}`);
+    const response = await http.get(`/categorias/nome/${nome}`);
     return response.data;
   } catch (error) {
     if (error instanceof AxiosError) {
@@ -68,7 +68,7 @@ export async function buscarCategoriaPorNome(nome: string) {
 
 export async function buscarCategoriaPorId(id: string) {
   try {
-    const response = await api.get(`/categorias/${id}`);
+    const response = await http.get(`/categorias/${id}`);
     return response.data;
   } catch (error) {
     if (error instanceof AxiosError) {
